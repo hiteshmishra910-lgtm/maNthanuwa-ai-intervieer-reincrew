@@ -1,0 +1,8 @@
+[project]
+id = "score-aptitude"
+
+# The function performs its own Clerk JWT verification (Clerk tokens are not Supabase JWTs),
+# exactly as openrouter-proxy does. Gateway verification is therefore disabled here, NOT
+# because the endpoint is public.
+[functions.score-aptitude]
+verify_jwt = false

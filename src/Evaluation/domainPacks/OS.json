@@ -1,0 +1,17 @@
+{
+  "domain": "OS",
+  "version": "1.5.0",
+  "concepts": [
+    { "id": "process_vs_thread", "aliases": ["process", "thread", "address space", "lightweight process"], "importance": "critical" },
+    { "id": "virtual_memory", "aliases": ["virtual memory", "paging", "page fault", "page table", "mmu"], "importance": "important" },
+    { "id": "deadlock", "aliases": ["deadlock", "mutex", "semaphore", "bankers algorithm", "circular wait"], "importance": "important" },
+    { "id": "cpu_scheduling", "aliases": ["cpu scheduling", "round robin", "context switch", "preemptive"], "importance": "supporting" }
+  ],
+  "misconceptions": [
+    { "id": "process_thread_space", "keywords": ["threads do not share memory", "process shares address space"], "severity": "moderate", "explanation": "Confused thread memory sharing vs process isolation" }
+  ],
+  "rules": [
+    { "id": "os_scheduling_policy", "description": "Discussed CPU scheduling without naming a policy (round robin / FCFS / priority).", "triggerPhrases": ["scheduling", "scheduler"], "expectedPhrases": ["round robin", "round-robin", "fcfs", "first come first served", "priority", "preemptive"], "severity": "low", "penalty": 0.5 },
+    { "id": "os_deadlock_condition", "description": "Discussed deadlock without mentioning one of the Coffman conditions.", "triggerPhrases": ["deadlock"], "expectedPhrases": ["mutual exclusion", "hold and wait", "circular wait", "no preemption", "preempt"], "severity": "low", "penalty": 0.5 }
+  ]
+}

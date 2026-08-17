@@ -1,0 +1,5 @@
+[project]
+id = "cloudinary-sign"
+
+[functions.cloudinary-sign]
+verify_jwt = false

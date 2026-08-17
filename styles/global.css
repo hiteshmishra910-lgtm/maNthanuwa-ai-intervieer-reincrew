@@ -1,0 +1,169 @@
+
+@import "tailwindcss";
+
+/* ─────────────────────────────────────────────────────────
+   BASE
+───────────────────────────────────────────────────────── */
+html, body {
+  min-height: 100%;
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+/* iOS Safari input zoom prevention — all inputs must be >= 16px */
+input, select, textarea {
+  font-size: 16px;
+}
+
+/* ─────────────────────────────────────────────────────────
+   SCROLLBAR — slim, tasteful
+───────────────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Hide scrollbar but keep scroll functionality (used on pill nav rows, carousels) */
+.no-scrollbar {
+  scrollbar-width: none;      /* Firefox */
+  -ms-overflow-style: none;   /* IE 10+ */
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;              /* Chrome / Safari / Edge */
+}
+
+/* ─────────────────────────────────────────────────────────
+   SAFE AREA — iPhone notch / home indicator / Android nav bar
+───────────────────────────────────────────────────────── */
+.safe-top    { padding-top:    env(safe-area-inset-top,    0px); }
+.safe-bottom { padding-bottom: env(safe-area-inset-bottom, 0px); }
+.safe-left   { padding-left:   env(safe-area-inset-left,   0px); }
+.safe-right  { padding-right:  env(safe-area-inset-right,  0px); }
+
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+.bottom-safe {
+  bottom: calc(0.5rem + env(safe-area-inset-bottom, 0px));
+}
+
+/* ─────────────────────────────────────────────────────────
+   BACKDROP BLUR — Safari iOS < 15 prefix
+───────────────────────────────────────────────────────── */
+.backdrop-blur-md {
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+}
+.backdrop-blur-sm {
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+}
+.backdrop-blur-xl {
+  -webkit-backdrop-filter: blur(24px);
+  backdrop-filter: blur(24px);
+}
+
+/* ─────────────────────────────────────────────────────────
+   CUSTOM Z-INDEX TOKENS
+   Tailwind default max: z-50. These extend it safely.
+───────────────────────────────────────────────────────── */
+.z-60  { z-index: 60;   }
+.z-70  { z-index: 70;   }
+.z-80  { z-index: 80;   }
+.z-90  { z-index: 90;   }
+.z-100 { z-index: 100;  }
+
+/* ─────────────────────────────────────────────────────────
+   CUSTOM SPACING
+   bottom-22 = 88px (5.5rem) — used by TourButton
+───────────────────────────────────────────────────────── */
+.bottom-22 { bottom: 5.5rem; }
+
+/* ─────────────────────────────────────────────────────────
+   UTILITIES
+───────────────────────────────────────────────────────── */
+.cursor-wait {
+  cursor: wait;
+}
+
+.video-container video {
+  transform: scaleX(-1); /* Mirror effect */
+}
+
+/* ─────────────────────────────────────────────────────────
+   ANIMATIONS
+───────────────────────────────────────────────────────── */
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: .5; }
+}
+.animate-pulse-slow {
+  animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes wave {
+  0%, 100% { height: 10%; }
+  50% { height: 100%; }
+}
+.voice-wave-bar {
+  animation: wave 1s ease-in-out infinite;
+}
+
+@keyframes morph {
+  0% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+  50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+  100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+}
+.animate-morph {
+  animation: morph 6s ease-in-out infinite;
+}
+.animate-morph-fast {
+  animation: morph 3s ease-in-out infinite;
+}
+
+@keyframes sound-wave {
+  0% { transform: scale(0.9); opacity: 1; }
+  100% { transform: scale(2); opacity: 0; }
+}
+.animate-sound-wave {
+  animation: sound-wave 1.5s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.animate-spin-slow {
+  animation: spin-slow 12s linear infinite;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out forwards;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-4px); }
+  40% { transform: translateX(4px); }
+  60% { transform: translateX(-4px); }
+  80% { transform: translateX(4px); }
+}
+.animate-shake {
+  animation: shake 0.4s ease-in-out;
+}

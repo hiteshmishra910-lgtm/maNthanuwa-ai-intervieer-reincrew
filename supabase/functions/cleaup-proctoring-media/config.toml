@@ -1,0 +1,8 @@
+[project]
+id = "cleaup-proctoring-media"
+
+# Scheduled maintenance job. It authenticates callers with the CLEANUP_JOB_SECRET shared
+# secret (see index.ts) rather than a user JWT, so gateway verification is disabled.
+# This is NOT a public endpoint.
+[functions.cleaup-proctoring-media]
+verify_jwt = false

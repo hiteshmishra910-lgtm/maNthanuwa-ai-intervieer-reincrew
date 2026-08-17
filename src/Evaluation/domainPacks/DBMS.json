@@ -1,0 +1,19 @@
+{
+  "domain": "DBMS",
+  "version": "2.3.0",
+  "concepts": [
+    { "id": "relational_db", "aliases": ["relational database", "rdbms", "sql database", "tables and rows", "relational", "database", "table", "tables", "relationel", "tabels"], "importance": "critical" },
+    { "id": "acid_properties", "aliases": ["acid", "atomicity", "consistency", "isolation", "durability", "acid properties", "consistancy", "durabilitie"], "importance": "critical" },
+    { "id": "indexing", "aliases": ["index", "b-tree", "hash index", "clustered index"], "importance": "important" },
+    { "id": "transactions", "aliases": ["transaction", "commit", "rollback", "isolation level"], "importance": "important" },
+    { "id": "normalization", "aliases": ["normal form", "1nf", "2nf", "3nf", "bcnf"], "importance": "supporting" },
+    { "id": "sharding", "aliases": ["sharding", "horizontal partitioning", "database cluster"], "importance": "bonus" }
+  ],
+  "misconceptions": [
+    { "id": "sql_nosql_swap", "keywords": ["sql is nosql", "nosql supports acid transactions by default"], "severity": "critical", "explanation": "Confused SQL relational model with NoSQL non-relational model" }
+  ],
+  "rules": [
+    { "id": "dbms_transaction_depth", "description": "Discussed transactions but did not mention commit/rollback or isolation levels.", "triggerPhrases": ["transaction", "transactions", "acid"], "expectedPhrases": ["commit", "rollback", "isolation"], "severity": "medium", "penalty": 1.0 },
+    { "id": "dbms_index_structure", "description": "Discussed indexing without naming a supporting data structure (B-tree / hash index).", "triggerPhrases": ["index", "indexing", "indices"], "expectedPhrases": ["b-tree", "b tree", "btree", "binary search", "hash"], "severity": "low", "penalty": 0.5 }
+  ]
+}

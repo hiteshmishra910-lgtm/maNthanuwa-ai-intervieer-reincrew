@@ -1,0 +1,18 @@
+{
+  "domain": "Networks",
+  "version": "1.8.1",
+  "concepts": [
+    { "id": "tcp_protocol", "aliases": ["tcp", "transmission control protocol", "connection oriented"], "importance": "critical" },
+    { "id": "udp_protocol", "aliases": ["udp", "user datagram protocol", "connectionless"], "importance": "important" },
+    { "id": "http_https", "aliases": ["http", "https", "hypertext transfer protocol", "tls", "ssl"], "importance": "critical" },
+    { "id": "dns_resolution", "aliases": ["dns", "domain name system", "ip lookup"], "importance": "important" },
+    { "id": "osi_layers", "aliases": ["osi model", "7 layers", "transport layer", "application layer"], "importance": "supporting" }
+  ],
+  "misconceptions": [
+    { "id": "tcp_udp_speed", "keywords": ["tcp is faster than udp", "http is an operating system"], "severity": "critical", "explanation": "Asserted that TCP is faster than UDP or confused HTTP with an OS" }
+  ],
+  "rules": [
+    { "id": "net_tcp_reliability", "description": "Discussed TCP but did not mention its reliability features (ACK / retransmission / flow control).", "triggerPhrases": ["tcp", "transmission control"], "expectedPhrases": ["acknowledgement", "acknowledgment", "retransmission", "retransmit", "flow control", "three way handshake", "congestion control"], "severity": "low", "penalty": 0.5 },
+    { "id": "net_http_security", "description": "Discussed HTTP but did not mention encryption (TLS / HTTPS).", "triggerPhrases": ["http"], "expectedPhrases": ["tls", "ssl", "encrypt", "https"], "severity": "low", "penalty": 0.5 }
+  ]
+}

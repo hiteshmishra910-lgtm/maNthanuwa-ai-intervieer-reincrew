@@ -1,0 +1,115 @@
+/*
+  Project.AI — Shepherd.js Tour Theme Override
+  Import this file once in your app entry point:
+    import "./tours/tour.css";
+*/
+
+/* ── Tooltip card ─────────────────────────────────────────── */
+.shepherd-element {
+  border-radius: 12px !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.22) !important;
+  max-width: 340px !important;
+  font-family: inherit !important;
+}
+
+.shepherd-content {
+  padding: 0 !important;
+  border-radius: 12px !important;
+  overflow: hidden !important;
+}
+
+/* ── Header ───────────────────────────────────────────────── */
+.shepherd-header {
+  background: #6366f1 !important; /* indigo — swap to your brand colour */
+  padding: 14px 18px 12px !important;
+  border-bottom: none !important;
+}
+
+.shepherd-title {
+  color: #ffffff !important;
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  line-height: 1.3 !important;
+}
+
+.shepherd-cancel-icon {
+  color: rgba(255, 255, 255, 0.75) !important;
+  font-size: 20px !important;
+}
+.shepherd-cancel-icon:hover {
+  color: #ffffff !important;
+}
+
+/* ── Body ─────────────────────────────────────────────────── */
+.shepherd-text {
+  padding: 16px 18px !important;
+  font-size: 14px !important;
+  line-height: 1.6 !important;
+  color: #374151 !important;
+  background: #ffffff !important;
+}
+
+.shepherd-text p {
+  margin: 0 0 8px !important;
+}
+.shepherd-text p:last-child {
+  margin-bottom: 0 !important;
+}
+
+.shepherd-text code {
+  background: #f3f4f6;
+  padding: 2px 5px;
+  border-radius: 4px;
+  font-size: 12px;
+  color: #4f46e5;
+}
+
+/* ── Footer / Buttons ─────────────────────────────────────── */
+.shepherd-footer {
+  padding: 12px 18px 16px !important;
+  background: #ffffff !important;
+  border-top: 1px solid #f3f4f6 !important;
+  display: flex !important;
+  justify-content: flex-end !important;
+  gap: 8px !important;
+}
+
+.shepherd-button-primary {
+  background: #6366f1 !important;
+  color: #ffffff !important;
+  border: none !important;
+  padding: 8px 16px !important;
+  border-radius: 8px !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  transition: background 0.15s ease !important;
+}
+.shepherd-button-primary:hover {
+  background: #4f46e5 !important;
+}
+
+.shepherd-button-secondary {
+  background: transparent !important;
+  color: #9ca3af !important;
+  border: 1px solid #e5e7eb !important;
+  padding: 8px 14px !important;
+  border-radius: 8px !important;
+  font-size: 13px !important;
+  cursor: pointer !important;
+  transition: color 0.15s ease, border-color 0.15s ease !important;
+}
+.shepherd-button-secondary:hover {
+  color: #6b7280 !important;
+  border-color: #d1d5db !important;
+}
+
+/* ── Arrow ────────────────────────────────────────────────── */
+.shepherd-arrow::before {
+  background: #6366f1 !important;
+}
+
+/* ── Modal overlay ────────────────────────────────────────── */
+.shepherd-modal-overlay-container {
+  opacity: 0.55 !important;
+}

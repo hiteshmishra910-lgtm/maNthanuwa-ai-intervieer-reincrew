@@ -1,0 +1,5 @@
+[project]
+id = "openrouter-proxy"
+
+[functions.openrouter-proxy]
+verify_jwt = false

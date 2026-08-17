@@ -1,0 +1,17 @@
+{
+  "domain": "SystemDesign",
+  "version": "2.1.0",
+  "concepts": [
+    { "id": "load_balancer", "aliases": ["load balancer", "reverse proxy", "nginx", "round robin routing"], "importance": "critical" },
+    { "id": "caching", "aliases": ["cache", "redis", "memcached", "cdn", "cache eviction"], "importance": "critical" },
+    { "id": "cap_theorem", "aliases": ["cap theorem", "consistency", "availability", "partition tolerance"], "importance": "important" },
+    { "id": "message_queue", "aliases": ["message queue", "kafka", "rabbitmq", "pub sub", "event driven"], "importance": "important" }
+  ],
+  "misconceptions": [
+    { "id": "cap_all_three", "keywords": ["cap theorem guarantees consistency availability and partition tolerance all at once"], "severity": "moderate", "explanation": "Claimed a system can achieve all 3 CAP properties simultaneously" }
+  ],
+  "rules": [
+    { "id": "sysdesign_cap_application", "description": "Discussed CAP without applying it to a concrete trade-off (availability vs consistency).", "triggerPhrases": ["cap theorem", "cap"], "expectedPhrases": ["availability", "consistency", "partition tolerance", "trade-off", "tradeoff"], "severity": "low", "penalty": 0.5 },
+    { "id": "sysdesign_load_bottleneck", "description": "Discussed load / scaling without naming a scaling technique (sharding / caching / queues / replicas).", "triggerPhrases": ["load balancer", "load", "scalable", "scale"], "expectedPhrases": ["shard", "partition", "cache", "queue", "replica", "horizontal"], "severity": "low", "penalty": 0.5 }
+  ]
+}

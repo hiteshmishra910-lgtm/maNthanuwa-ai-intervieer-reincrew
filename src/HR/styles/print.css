@@ -1,0 +1,37 @@
+@media print {
+  /* Hide everything by default */
+  body * {
+    visibility: hidden;
+  }
+
+  /* Show only the report and all its children */
+  .print-report,
+  .print-report * {
+    visibility: visible;
+  }
+
+  /* Position report at top-left corner of the page */
+  .print-report {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    padding: 24px;
+  }
+
+  /* Hide specific UI elements even if inside report */
+  .print-hide {
+    display: none !important;
+  }
+
+  /* Page setup */
+  @page {
+    margin: 1cm;
+    size: A4;
+  }
+
+  /* Prevent cards from breaking mid-page */
+  section {
+    break-inside: avoid;
+  }
+}

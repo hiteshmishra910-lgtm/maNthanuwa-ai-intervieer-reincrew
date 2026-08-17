@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <title>Reicrew AI - Smart Interview Platform</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+      /* Custom Animations & Overrides */
+      html, body {
+        min-height: 100%;
+        margin: 0;
+        font-family: 'Inter', sans-serif;
+        /* iOS smooth scrolling */
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior-y: contain;
+        /* Prevent text size adjustment on orientation change */
+        -webkit-text-size-adjust: 100%;
+      }
+
+      /* Eliminate 300ms tap delay on all touch devices */
+      * {
+        touch-action: manipulation;
+      }
+
+      /* Minimum 44px touch targets for all interactive elements */
+      button, a, input[type="button"], input[type="submit"],
+      input[type="checkbox"], input[type="radio"], select {
+        min-height: 44px;
+      }
+
+      /* Inputs: prevent iOS auto-zoom (font-size must be >= 16px) */
+      input, textarea, select {
+        font-size: 16px !important;
+      }
+
+      /* Safe area insets for notched iPhones */
+      .safe-top    { padding-top: env(safe-area-inset-top); }
+      .safe-bottom { padding-bottom: env(safe-area-inset-bottom); }
+      .safe-left   { padding-left: env(safe-area-inset-left); }
+      .safe-right  { padding-right: env(safe-area-inset-right); }
+
+      /* Custom scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent; 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #cbd5e1; 
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #94a3b8; 
+      }
+
+      .cursor-wait {
+        cursor: wait;
+      }
+
+      /* Animations */
+      @keyframes pulse {
+        0%, 100% { opacity: 1; }
+        50% { opacity: .5; }
+      }
+      .animate-pulse-slow {
+        animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+      }
+
+      @keyframes wave {
+        0%, 100% { height: 10%; }
+        50% { height: 100%; }
+      }
+      .voice-wave-bar {
+        animation: wave 1s ease-in-out infinite;
+      }
+
+      @keyframes morph {
+        0% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+        50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+        100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+      }
+      .animate-morph {
+        animation: morph 6s ease-in-out infinite;
+      }
+      .animate-morph-fast {
+        animation: morph 3s ease-in-out infinite;
+      }
+
+      @keyframes sound-wave {
+        0% { transform: scale(0.9); opacity: 1; }
+        100% { transform: scale(2); opacity: 0; }
+      }
+      .animate-sound-wave {
+        animation: sound-wave 1.5s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+      }
+
+      @keyframes spin-slow {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+      .animate-spin-slow {
+        animation: spin-slow 12s linear infinite;
+      }
+
+      @keyframes fade-in {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      .animate-fade-in {
+        animation: fade-in 0.5s ease-out forwards;
+      }
+    </style>
+  <link rel="stylesheet" href="/styles/global.css">
+</head>
+  <body class="bg-slate-50 text-slate-900 min-h-screen w-full">
+    <div id="root" class="min-h-screen w-full"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>

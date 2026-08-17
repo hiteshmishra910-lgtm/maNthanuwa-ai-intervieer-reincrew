@@ -1,0 +1,8 @@
+{
+  "name": "REICREW AI",
+  "description": "An interactive AI-powered interview platform with voice interaction, strict evaluation, and detailed feedback tracking.",
+  "requestFramePermissions": [
+    "microphone",
+    "camera"
+  ]
+}
